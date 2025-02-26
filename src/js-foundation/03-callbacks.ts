@@ -15,7 +15,11 @@ export function getUserById(id: number, callback: any) {
   });
 
   if (!user) {
-    return callback(`User not found with id ${id}`);
+    setTimeout(() => {
+      callback(`User not found with id ${id}`);
+    }, 500);
+
+    return;
   }
 
   return callback(null, user);
